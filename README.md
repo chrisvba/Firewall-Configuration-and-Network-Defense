@@ -312,4 +312,4 @@ This project provided hands-on experience implementing and analyzing **host-base
 
 By performing network reconnaissance with Nmap, identifying high-risk services, establishing secure SSH administration, implementing a default-deny `iptables` policy, configuring stateful inspection, and explicitly restricting dangerous services, I gained practical experience with network access control and attack surface reduction.
 
-The project also strengthened my understanding of how **firewalls, intrusion prevention systems, authentication, and privilege management work together as part of a defense-in-depth security strategy**.
+The project also strengthened my understanding of how firewalls, intrusion prevention systems, authentication, and privilege management work together as part of a defense-in-depth security strategy**.
