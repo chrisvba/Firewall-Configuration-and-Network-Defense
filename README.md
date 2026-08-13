@@ -61,14 +61,14 @@ The scan identified numerous exposed services, including:
 - Legacy R-services
 - Metasploitable bindshell
 
-![Pre-Firewall Nmap Scan Part 1](<img width="975" height="773" alt="image" src="https://github.com/user-attachments/assets/a016c076-2c1e-4e23-ae7e-e41cbfe6beb9" />
+<img width="975" height="773" alt="image" src="https://github.com/user-attachments/assets/a016c076-2c1e-4e23-ae7e-e41cbfe6beb9" />
 )
 
 **Figure 1 — Initial Nmap service enumeration.** The baseline scan revealed numerous exposed network services and provided visibility into the target's attack surface before firewall restrictions were implemented.
 
 The scan also identified service versions, which provided additional information about the software operating behind each exposed port.
 
-![Pre-Firewall Nmap Scan Part 2](<img width="975" height="774" alt="image" src="https://github.com/user-attachments/assets/ecbe89d9-5123-4481-b90f-cf7a9c4f8a07" />
+<img width="975" height="774" alt="image" src="https://github.com/user-attachments/assets/ecbe89d9-5123-4481-b90f-cf7a9c4f8a07" />
 )
 
 **Figure 2 — Complete Nmap service enumeration.** Additional exposed services included database servers, remote-access services, RPC services, IRC, Apache Tomcat, and the Metasploitable root bindshell.
@@ -107,7 +107,7 @@ Before restricting incoming network access, I verified that the Metasploitable 2
 ssh msfadmin@192.168.1.4
 ```
 
-![SSH Remote Administration](<img width="975" height="536" alt="image" src="https://github.com/user-attachments/assets/0778f73a-2922-4a50-8abc-d17106277dad" />
+<img width="975" height="536" alt="image" src="https://github.com/user-attachments/assets/0778f73a-2922-4a50-8abc-d17106277dad" />
 )
 
 **Figure 3 — SSH connection to Metasploitable 2.** SSH provided an encrypted method for remote administration and was selected as the essential management service that would remain accessible through the firewall.
@@ -133,7 +133,7 @@ A default-deny policy was then applied to incoming traffic:
 sudo iptables -P INPUT DROP
 ```
 
-![iptables Default Deny Configuration](<img width="975" height="549" alt="image" src="https://github.com/user-attachments/assets/c5257467-a0f6-406e-b70f-d7610c74229c" />
+<img width="975" height="549" alt="image" src="https://github.com/user-attachments/assets/c5257467-a0f6-406e-b70f-d7610c74229c" />
 )
 
 **Figure 4 — Beginning the iptables firewall configuration.** Existing rules were cleared and the INPUT chain was changed to a default `DROP` policy.
@@ -205,7 +205,7 @@ After configuring the firewall, I reviewed the resulting `iptables` rules using:
 sudo iptables -L -n -v
 ```
 
-![Final iptables Rules](<img width="1106" height="614" alt="image" src="https://github.com/user-attachments/assets/3a0006f6-c791-4994-85ca-5f87b713ba8a" />
+<img width="1106" height="614" alt="image" src="https://github.com/user-attachments/assets/3a0006f6-c791-4994-85ca-5f87b713ba8a" />
 )
 
 **Figure 5 — Final iptables firewall ruleset.** The INPUT chain uses a default `DROP` policy, permits established connections and SSH traffic, and explicitly drops FTP, Telnet, and bindshell traffic.
