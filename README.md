@@ -176,7 +176,7 @@ The configuration demonstrates an **allowlist approach**: only services with a l
 
 ### 7. Explicitly Blocked High-Risk Services
 
-Explicit `DROP` rules were created to document and enforce restrictions against several high-risk services:
+Explicit DROP rules were created to document and enforce restrictions against several high-risk services:
 
 ```bash
 sudo iptables -A INPUT -p tcp --dport 21 -j DROP
@@ -208,12 +208,12 @@ sudo iptables -L -n -v
 <img width="1106" height="614" alt="image" src="https://github.com/user-attachments/assets/3a0006f6-c791-4994-85ca-5f87b713ba8a" />
 )
 
-**Figure 5 — Final iptables firewall ruleset.** The INPUT chain uses a default `DROP` policy, permits established connections and SSH traffic, and explicitly drops FTP, Telnet, and bindshell traffic.
+**Figure 5 — Final iptables firewall ruleset.** The INPUT chain uses a default DROP policy, permits established connections and SSH traffic, and explicitly drops FTP, Telnet, and bindshell traffic.
 
 The final configuration demonstrated several important firewall concepts:
 
 - **Default deny** for incoming traffic
-- **Stateful inspection** using `ESTABLISHED` and `RELATED`
+- **Stateful inspection** using ESTABLISHED and RELATED
 - **SSH allowlisting** for secure administration
 - **FTP blocking**
 - **Telnet blocking**
@@ -308,8 +308,8 @@ For this reason, firewall controls should operate alongside IPS, authentication,
 
 ## Conclusion
 
-This project provided hands-on experience implementing and analyzing **host-based firewall security controls** in a controlled cybersecurity lab environment.
+This project provided hands-on experience implementing and analyzing host-based firewall security controls in a controlled cybersecurity lab environment.
 
 By performing network reconnaissance with Nmap, identifying high-risk services, establishing secure SSH administration, implementing a default-deny `iptables` policy, configuring stateful inspection, and explicitly restricting dangerous services, I gained practical experience with network access control and attack surface reduction.
 
-The project also strengthened my understanding of how firewalls, intrusion prevention systems, authentication, and privilege management work together as part of a defense-in-depth security strategy**.
+The project also strengthened my understanding of how firewalls, intrusion prevention systems, authentication, and privilege management work together as part of a defense-in-depth security strategy.
